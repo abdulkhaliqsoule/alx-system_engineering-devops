@@ -25,3 +25,4 @@
 22-users_and_homes - Write a script that displays all users and their home directories, sorted by users. Based on the the /etc/passwd file
 
 100-empty_casks - Write a command that finds all empty files and directories in the current directory and all sub-directories. 
+101-gifs - Write a script that lists all the files with a .gif extension in the current directory and all its sub-directories. Hidden files should be listed Only regular files (not directories) should be listed The names of the files should be displayed without their extensions The files should be sorted by byte values, but case-insensitive (file aaa should be listed before file bbb, file .b should be listed before file a, and file Rona should be listed after file jay) One file name per line The listing should end with a new line 
