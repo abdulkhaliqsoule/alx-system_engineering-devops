@@ -14,4 +14,5 @@
 13-print_float - Write a script that prints a number with two decimal places. The number will be stored in the environment variable NUM.
 14. Decimal to Hexadecimal- decimal_to_hexadecimal is a script that converts a number from base 10 to base 16.
 15. Everyone is a proponent of strong encryption- a script that encodes and decodes text using the rot13 encryption.
+16. The eggs of the brood need to be an odd number- Write a script that prints every other line from the input, starting with the first line.
 
