@@ -12,7 +12,9 @@
 11-binary_to_decimal - Write a script that converts a number from base 2 to base 10. The number in base 2 is stored in the environment variable BINARY The script should display the number in base 10, followed by a new line
 12-combinations - Create a script that prints all possible combinations of two letters, except oo. Letters are lower cases, from a to z One combination per line The output should be alpha ordered, starting with aa Do not print oo Your script file should contain maximum 64 characters
 13-print_float - Write a script that prints a number with two decimal places. The number will be stored in the environment variable NUM.
-14. Decimal to Hexadecimal- decimal_to_hexadecimal is a script that converts a number from base 10 to base 16.
+14.101-rot13- decimal_to_hexadecimal is a script that converts a number from base 10 to base 16.
 15. Everyone is a proponent of strong encryption- a script that encodes and decodes text using the rot13 encryption.
-16. The eggs of the brood need to be an odd number- Write a script that prints every other line from the input, starting with the first line.
+16.102-odd- Write a script that prints every other line from the input, starting with the first line.
+17.103-water_and_stir- Write a shell script that adds the two numbers stored in the environment variables WATER and STIR and prints the result.
+
 
