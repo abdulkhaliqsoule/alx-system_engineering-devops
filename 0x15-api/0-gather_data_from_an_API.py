@@ -1,25 +1,25 @@
 #!/usr/bin/python3
-""" Script that uses JSONPlaceholder API to get information about employee """
+"""gets api"""
 import requests
-import sys
+from sys import argv
+
+
+def todo(userid):
+    """doc stringed"""
+    name = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}'.format(
+            userid)).json().get('name')
+    tasks = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}/todos'.format(
+            userid)).json()
+    tasksDone = ['\t {}\n'.format(dic.get('title')) for dic in tasks
+                 if dic.get('completed')]
+    if name and tasks:
+        print("Employee {} is done with tasks({}/{}):".format
+              (name, len(tasksDone), len(tasks)))
+        print(''.join(tasksDone), end='')
 
 
 if __name__ == "__main__":
-    url = "https://jsonplaceholder.typicode.com/"
-
-    """Get employee name"""
-    user_url = f"{url}users/{sys.argv[1]}"
-    employee = requests.get(user_url).json()
-    print(f"Employee {employee.get('name')} is done with tasks", end="")
-
-    """Get employee to do list"""
-    todo_url = f"{url}todos?userId={sys.argv[1]}"
-    tasks = requests.get(todo_url).json()
-    completed_tasks = []
-    for task in tasks:
-        if task.get('completed') is True:
-            completed_tasks.append(task)
-
-    print(f" ({len(completed_tasks)}/{len(tasks)}):")
-    for task in completed_tasks:
-        print(f"\t {task.get('title')}")
+    if len(argv) == 2:
+        todo(int(argv[1]))
