@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# csv exported
+"""Export to JSON"""
 import json
 from requests import get
 from sys import argv
