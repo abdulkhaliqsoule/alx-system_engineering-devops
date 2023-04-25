@@ -8,11 +8,12 @@ import sys
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
-
+    
+    """Get employee name"""
     user_url = f"{url}users/{sys.argv[1]}"
     employee = requests.get(user_url).json()
     print(f"Employee {employee.get('name')} is done with tasks", end="")
-
+    """Get employee to do list"""
     todo_url = f"{url}todos?userId={sys.argv[1]}"
     tasks = requests.get(todo_url).json()
     completed_tasks = []
