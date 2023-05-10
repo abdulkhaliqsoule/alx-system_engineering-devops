@@ -15,7 +15,7 @@ def csv_write(user):
     cwrite = csv.writer(employ_data, quoting=csv.QUOTE_ALL)
     for record in data:
         row = [record.get('userId'), name,
-                 record.get('completed'), record.get('title')]
+                record.get('completed'), record.get('title')]
         cwrite.writerow(row)
     employ_data.close()
 

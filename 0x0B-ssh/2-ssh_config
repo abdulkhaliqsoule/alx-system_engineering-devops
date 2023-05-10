@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # update ssh config
-Host school
+103296-web-01
 	Hostname 100.25.203.170
 	User ubuntu
 	Port 22
