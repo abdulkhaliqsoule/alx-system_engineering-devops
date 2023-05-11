@@ -8,6 +8,7 @@ import requests
 def number_of_subscribers(subreddit):
     """function that queries the Reddit
     API and returns the number of subscribers"""
+
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {"User-Agent": ",mclovin-bot/0.0.1"}
 
