@@ -7,7 +7,7 @@ def top_ten(subreddit):
     ''' get top 10 hot posts from given subreddit '''
 
     base_url = 'http://reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
-    headers = {'User-agent': 'colombiandreamm'}
+    headers = {'User-agent': 'mclovin_bot'}
 
     response = requests.get(base_url, headers=headers)
     if response.status_code == 200:
