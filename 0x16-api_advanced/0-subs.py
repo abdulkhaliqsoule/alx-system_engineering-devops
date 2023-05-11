@@ -1,29 +1,17 @@
 #!/usr/bin/python3
-"""
-queries the Reddit API and returns the number of subscribers
-"""
+'''queries the Reddit API and returns the number of subscribers of subreddit'''
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """function that queries the Reddit
-    API and returns the number of subscribers"""
+    ''' get num of subs '''
 
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {"User-Agent": ",mclovin-bot/0.0.1"}
+    base_url = 'http://reddit.com/r/{}/about.json'.format(subreddit)
+    headers = {'User-agent': 'mclovin_bot'}
+    response = requests.get(base_url, headers=headers)
 
-    try:
-        response = requests.get(url, headers=headers, allow_redirects=False)
-        response.raise_for_status()
-    except requests.exceptions.HTTPError as e:
-        if e.response.status_code == 404:
-            print("Subreddit '{}' not found".format(subreddit))
-        else:
-            print("An HTTP error occured: {}".format(e))
+    if response.status_code == 200:
+        subs_num = response.json().get('data').get('subscribers')
+        return subs_num
+    else:
         return 0
-    except requests.exceptions.RequestException as e:
-        print("A network error occured: {}".format(e))
-        return 0
-
-    data = response.json()
-    return data.get('data').get('subscribers')
